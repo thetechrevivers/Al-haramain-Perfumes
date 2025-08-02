@@ -1,0 +1,256 @@
+<style>
+  .slider-container-notes {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    margin-top:5px;
+    margin-bottom:10px;
+  }
+
+  .slider-icons {
+    display: flex;
+    transition: transform 0.3s ease;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  .slider-icons li {
+    flex: 0 0 auto;
+    width: 100px;
+    margin-right: 10px;
+    text-align: center;
+    list-style: none;
+    margin-left: 30px;
+  }
+
+  .arrownotes {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: white;
+    /* border: 1px solid; */
+    font-size: 14px;
+    cursor: pointer;
+    z-index: 2;
+    color: black;
+    border-radius: 4px;
+    padding: 2px 7px;
+  }
+
+  .arrownotes.left {
+    left: 0;
+  }
+
+  .arrownotes.right {
+    right: 0;
+  }
+
+   .notes-heading{
+      text-align: center;
+    margin-top: 10px;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    font-size: 21px;
+    color: black;
+    }
+  .capitalize-text {
+  text-transform: capitalize;
+}
+
+  @media(max-width:767px){
+    .slider-icons li {
+    margin-left: 0px;
+}
+
+    .notes-heading{
+      text-align: center;
+    margin-top: 10px;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    font-size: 18px;
+    color: black;
+    }
+
+    .slider-icons li img{
+      width:70%;
+    }
+
+
+    
+  }
+</style>
+{% if product.metafields.custom.top_note_1_image_ != blank %}
+  <p class="notes-heading">Top Notes</p>
+<div class="slider-container-notes">
+ 
+  <button class="arrownotes left" onclick="slide('TopNotes', -1)">&#10094;</button>
+ 
+  <ul class="slider-icons" id="sliderList-TopNotes">
+    {% if product.metafields.custom.top_note_1_image_ != blank %}
+          <li><img src="{{ product.metafields.custom.top_note_1_image_.value | img_url: 'medium' }}" alt="" width="" height=""/> 
+            <br>
+          <span class="capitalize-text">{% if product.metafields.custom.top_note_1_title_ != blank %}  {{ product.metafields.custom.top_note_1_title_ }} {% endif %}</span>
+        </li>
+        {% endif %}
+        
+        {% if product.metafields.custom.top_note_2_image_ != blank %}
+          <li><img src="{{ product.metafields.custom.top_note_2_image_ | img_url: 'medium' }}" alt="" width="" height=""/>
+           <br>
+        <span class="capitalize-text"> {% if product.metafields.custom.top_note_2_title_ != blank %}  {{ product.metafields.custom.top_note_2_title_ }} {% endif %}</span>
+          </li>
+      {% endif %}
+        
+      {% if product.metafields.custom.top_note_3_image_ != blank %}
+          <li><img src="{{ product.metafields.custom.top_note_3_image_ | img_url: 'medium' }}" alt="" width="" height=""/>
+            <br>
+         <span class="capitalize-text">{% if product.metafields.custom.top_note_3_title_ != blank %}  {{ product.metafields.custom.top_note_3_title_ }} {% endif %}<?
+        </li>
+       {% endif %}
+
+      {% if product.metafields.custom.top_note_4_title_ != blank %}
+          <li> {% if product.metafields.custom.top_note_4_image_ != blank %}<img src="{{ product.metafields.custom.top_note_4_image_ | img_url: 'medium' }}" alt="" width="" height=""/> {% endif %}
+            <br>
+      <span class="capitalize-text"> {% if product.metafields.custom.top_note_4_title_ != blank %}  {{ product.metafields.custom.top_note_4_title_ }}</span>
+         {% endif %}
+        </li>
+     
+        {% endif %}
+  </ul>
+
+  <button class="arrownotes right" onclick="slide('TopNotes', 1)">&#10095;</button>
+  </div>
+{% endif %}
+
+
+
+<!-- MIDDLE NOTES -->
+{% if product.metafields.custom.middle_note_1_image_ != blank %}
+  <p class="notes-heading">Middle Notes</p>
+<div class="slider-container-notes">
+  {% if product.metafields.custom.middle_note_4_image_ != blank %}
+  <button class="arrownotes left" onclick="slide('middlenotes', -1)">&#10094;</button>
+{% else %}
+    <button style="display:none;" onclick="slide('middlenotes', -1)"></button>
+  {% endif %}
+  <ul class="slider-icons" id="sliderList-middlenotes">
+{% if product.metafields.custom.middle_note_1_image_ != blank %}
+          <li><img src="{{ product.metafields.custom.middle_note_1_image_.value | img_url: 'medium' }}" alt="" width="" height=""/> 
+            <br>
+         <span class="capitalize-text"> {% if product.metafields.custom.middle_note_1_title_ != blank %}  {{ product.metafields.custom.middle_note_1_title_ }} {% endif %}</span>
+        </li>
+        {% endif %}
+        
+        {% if product.metafields.custom.middle_note_2_image_ != blank %}
+          <li><img src="{{ product.metafields.custom.middle_note_2_image_ | img_url: 'medium' }}" alt="" width="" height=""/>
+           <br>
+        <span class="capitalize-text"> {% if product.metafields.custom.middle_note_2_title_ != blank %}  {{ product.metafields.custom.middle_note_2_title_ }} {% endif %}</span>
+          </li>
+      {% endif %}
+        
+      {% if product.metafields.custom.middle_note_3_image_ != blank %}
+          <li><img src="{{ product.metafields.custom.middle_note_3_image_ | img_url: 'medium' }}" alt="" width="" height=""/>
+            <br>
+       <span class="capitalize-text">  {% if product.metafields.custom.middle_note_3_title_ != blank %}  {{ product.metafields.custom.middle_note_3_title_ }} </span>
+           {% endif %}
+        </li>
+       {% endif %}
+
+      {% if product.metafields.custom.middle_note_4_title_ != blank %}
+          <li> {% if product.metafields.custom.middle_note_4_image_ != blank %}<img src="{{ product.metafields.custom.middle_note_4_image_ | img_url: 'medium' }}" alt="" width="" height=""/> {% endif %}
+            <br>
+    <span class="capitalize-text">   {% if product.metafields.custom.middle_note_4_title_ != blank %}  {{ product.metafields.custom.middle_note_4_title_ }}</span>
+         {% endif %}
+        </li>
+     
+        {% endif %}
+  </ul>
+{% if product.metafields.custom.middle_note_4_image_ != blank %}
+  <button class="arrownotes right" onclick="slide('middlenotes', 1)">&#10095;</button>
+  {% else %}
+    <button style="display:none;" onclick="slide('middlenotes', -1)"></button>
+  {% endif %}
+</div>
+{% endif %}
+
+
+
+
+
+
+<!-- Base Notes -->
+{% if product.metafields.custom.base_note_1_image_ != blank %}
+  <p class="notes-heading">Base Notes</p>
+<div class="slider-container-notes">
+  <button class="arrownotes left" onclick="slide('basenotes', -1)">&#10094;</button>
+
+  <ul class="slider-icons" id="sliderList-basenotes">
+         {% if product.metafields.custom.base_note_1_image_ != blank %}
+          <li><img src="{{ product.metafields.custom.base_note_1_image_.value | img_url: 'medium' }}" alt="" width="" height=""/> 
+            <br>
+         <span class="capitalize-text"> {% if product.metafields.custom.base_note_1_title_ != blank %}  {{ product.metafields.custom.base_note_1_title_ }} {% endif %} </span>
+        </li>
+        {% endif %}
+        
+        {% if product.metafields.custom.base_note_2_image_ != blank %}
+          <li><img src="{{ product.metafields.custom.base_note_2_image_ | img_url: 'medium' }}" alt="" width="" height=""/>
+           <br>
+        <span class="capitalize-text"> {% if product.metafields.custom.base_note_2_title_ != blank %}  {{ product.metafields.custom.base_note_2_title_ }} {% endif %}</span>
+          </li>
+      {% endif %}
+        
+      {% if product.metafields.custom.base_note_3_image_ != blank %}
+          <li><img src="{{ product.metafields.custom.base_note_3_image_ | img_url: 'medium' }}" alt="" width="" height=""/>
+            <br>
+        <span class="capitalize-text"> {% if product.metafields.custom.base_note_3_title_ != blank %}  {{ product.metafields.custom.base_note_3_title_ }} </span>
+           {% endif %}
+        </li>
+       {% endif %}
+
+      {% if product.metafields.custom.base_note_4_title_ != blank %}
+          <li> {% if product.metafields.custom.base_note_4_image_ != blank %}<img src="{{ product.metafields.custom.base_note_4_image_ | img_url: 'medium' }}" alt="" width="" height=""/> {% endif %}
+            <br>
+      <span class="capitalize-text"> {% if product.metafields.custom.base_note_4_title_ != blank %}  {{ product.metafields.custom.base_note_4_title_ }}</span>
+         {% endif %}
+        </li>
+     
+        {% endif %}
+  </ul>
+
+  <button class="arrownotes right" onclick="slide('basenotes', 1)">&#10095;</button>
+</div>
+{% endif %}
+
+<script>
+  document.querySelectorAll('.capitalize-text').forEach(function(el) {
+    let text = el.textContent.toLowerCase();
+    el.textContent = text.charAt(0).toUpperCase() + text.slice(1);
+  });
+</script>
+
+  
+
+<script>
+  const itemsToShow = 3;
+  let sliderIndexes = {};
+
+  function slide(sliderId, direction) {
+    const slider = document.getElementById('sliderList-' + sliderId);
+    if (!slider) return;
+
+    const totalItems = slider.children.length;
+    const maxIndex = Math.max(0, totalItems - itemsToShow);
+
+    if (!(sliderId in sliderIndexes)) {
+      sliderIndexes[sliderId] = 0;
+    }
+
+    sliderIndexes[sliderId] += direction;
+
+    if (sliderIndexes[sliderId] < 0) sliderIndexes[sliderId] = 0;
+    if (sliderIndexes[sliderId] > maxIndex) sliderIndexes[sliderId] = maxIndex;
+
+    const itemWidth = slider.children[0].offsetWidth + 10;
+    slider.style.transform = `translateX(-${sliderIndexes[sliderId] * itemWidth}px)`;
+  }
+</script>

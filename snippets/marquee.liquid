@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Infinite Marquee with Text and Logos</title>
+  <style>
+
+    .custom-marquee {
+      overflow: hidden;
+      white-space: nowrap;
+      width: 100%;
+      background: #957464;
+      padding: 0px 0;
+      position: relative;
+      padding-top:10px;
+      /* border-top: 2px solid #eee;
+      border-bottom: 2px solid #eee; */
+    }
+
+    .marquee-content {
+      display: inline-flex;
+      align-items: center;
+      animation: scrollMarquee 20s linear infinite;
+    }
+
+    .marquee-content img {
+      height: 40px; /* Logo size */
+      margin: 0 20px;
+    }
+
+    .marquee-content span {
+      font-size: 18px;
+      margin: 0 20px;
+      white-space: nowrap;
+      color: #333;
+    }
+
+    @keyframes scrollMarquee {
+      from {
+        transform: translateX(0%);
+      }
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    @media(max-width:767px)
+    {
+
+       .marquee-content span {
+      font-size: 14px;
+    }
+      .marquee-content img {
+    height: 20px;
+        margin: 0 0px;
+}
+      
+    }
+  </style>
+</head>
+<body>
+
+<div class="custom-marquee">
+  <div class="marquee-content">
+    <img src="https://cdn.shopify.com/s/files/1/0749/5073/8132/files/Free_Shipping.png?v=1747264966" alt="Logo 1" />
+    <span>FREE DELIVERY OVER 200 AED</span>
+    
+    <img src="https://cdn.shopify.com/s/files/1/0749/5073/8132/files/24_7_Customer_Support.png?v=1747264966" alt="Logo 2" />
+    <span>24/7 SUPPORT</span>
+    
+    <img src="https://cdn.shopify.com/s/files/1/0749/5073/8132/files/SECURE_PAYMENT.png?v=1747264966" alt="Logo 3" />
+    <span>SECURE PAYMENT</span>
+    
+    <img src="https://cdn.shopify.com/s/files/1/0749/5073/8132/files/Authenticity_Guaranteed.png?v=1747264966" alt="Logo 4" />
+    <span>AUTHENTICITY GUARANTEED</span>
+
+    <img src="https://cdn.shopify.com/s/files/1/0749/5073/8132/files/1_4e55ffd1-3386-4bf3-8a73-69ee72ec84f1.png?v=1748290555" alt="Logo 4" />
+    <span>ENGRAVING</span>
+
+      <img src="https://cdn.shopify.com/s/files/1/0749/5073/8132/files/2_673afe4b-98d9-4ded-9731-f32bb637a58a.png?v=1748290556" alt="Logo 4" />
+    <span>CUSTOM GIFTS</span>
+   
+    
+    <img src="https://cdn.shopify.com/s/files/1/0749/5073/8132/files/Free_Shipping.png?v=1747264966 alt="Logo 1" />
+    <span>FREE DELIVERY OVER 200 AED</span>
+    
+    <img src="https://cdn.shopify.com/s/files/1/0749/5073/8132/files/24_7_Customer_Support.png?v=1747264966" alt="Logo 2" />
+    <span>24/7 SUPPORT </span>
+
+     <img src="https://cdn.shopify.com/s/files/1/0749/5073/8132/files/SECURE_PAYMENT.png?v=1747264966" alt="Logo 3" />
+    <span>SECURE PAYMENT</span>
+    
+    <img src="https://cdn.shopify.com/s/files/1/0749/5073/8132/files/Authenticity_Guaranteed.png?v=1747264966" alt="Logo 3" />
+    <span>AUTHENTICITY GUARANTEED</span>
+
+      <img src="https://cdn.shopify.com/s/files/1/0749/5073/8132/files/1_4e55ffd1-3386-4bf3-8a73-69ee72ec84f1.png?v=1748290555" alt="Logo 4" />
+    <span>ENGRAVING</span>
+
+    <img src="https://cdn.shopify.com/s/files/1/0749/5073/8132/files/2_673afe4b-98d9-4ded-9731-f32bb637a58a.png?v=1748290556" alt="Logo 4" />
+    <span>CUSTOM GIFTS</span>
+    
+  </div>
+</div>
+
+</body>
+</html>

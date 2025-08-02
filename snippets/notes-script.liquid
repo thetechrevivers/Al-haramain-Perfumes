@@ -1,0 +1,22 @@
+ <script>
+  const itemsToShow = 3; // ya jitne item ek sath dikhane hain
+  let sliderIndexes = {}; // empty object sab sliders ke liye
+
+  function slide(sliderId, direction) {
+    const slider = document.getElementById('sliderList-' + sliderId);
+    const totalItems = slider.children.length;
+    const maxIndex = totalItems - itemsToShow;
+
+    if (!(sliderId in sliderIndexes)) {
+      sliderIndexes[sliderId] = 0;
+    }
+
+    sliderIndexes[sliderId] += direction;
+
+    if (sliderIndexes[sliderId] < 0) sliderIndexes[sliderId] = 0;
+    if (sliderIndexes[sliderId] > maxIndex) sliderIndexes[sliderId] = maxIndex;
+
+    const itemWidth = slider.children[0].offsetWidth + 10; // margin included
+    slider.style.transform = `translateX(-${sliderIndexes[sliderId] * itemWidth}px)`;
+  }
+</script>

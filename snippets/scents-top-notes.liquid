@@ -1,0 +1,179 @@
+ {% render 'scents-notes-style' %}
+{% if product.metafields.custom.top_note_1_title_ != 'blank' %}
+<h4 class="top-notes-style">Top Notes</h4>
+  <div class="slider-container">
+    {% if product.metafields.custom.top_note_4_title_ != blank %}
+    <button class="arrow left" onclick="slide('Top-Notes', -1)">&#10094;</button>
+    {% endif %}
+    <ul class="slider-icons" id="sliderList-Top-Notes">
+
+      {% if product.metafields.custom.top_note_1_image_ != blank %}
+          <li><img src="{{ product.metafields.custom.top_note_1_image_.value | img_url: 'medium' }}" alt="" width="" height=""/> 
+            <br>
+          {% if product.metafields.custom.top_note_1_title_ != blank %}  {{ product.metafields.custom.top_note_1_title_ }} {% endif %}
+        </li>
+        {% endif %}
+        
+        {% if product.metafields.custom.top_note_2_image_ != blank %}
+          <li><img src="{{ product.metafields.custom.top_note_2_image_ | img_url: 'medium' }}" alt="" width="" height=""/>
+           <br>
+         {% if product.metafields.custom.top_note_2_title_ != blank %}  {{ product.metafields.custom.top_note_2_title_ }} {% endif %}
+          </li>
+      {% endif %}
+        
+      {% if product.metafields.custom.top_note_3_image_ != blank %}
+          <li><img src="{{ product.metafields.custom.top_note_3_image_ | img_url: 'medium' }}" alt="" width="" height=""/>
+            <br>
+         {% if product.metafields.custom.top_note_3_title_ != blank %}  {{ product.metafields.custom.top_note_3_title_ }} {% endif %}
+        </li>
+       {% endif %}
+
+      {% if product.metafields.custom.top_note_4_title_ != blank %}
+          <li> {% if product.metafields.custom.top_note_4_image_ != blank %}<img src="{{ product.metafields.custom.top_note_4_image_ | img_url: 'medium' }}" alt="" width="" height=""/> {% endif %}
+            <br>
+       {% if product.metafields.custom.top_note_4_title_ != blank %}  {{ product.metafields.custom.top_note_4_title_ }}
+         {% endif %}
+        </li>
+     
+        {% endif %}
+</ul>
+  {% if product.metafields.custom.top_note_4_title_ != blank %}
+   <button class="arrow right" onclick="slide('Top-Notes', 1)">&#10095;</button>
+    {% endif %}
+  </div>
+  {% endif %}
+
+
+
+
+
+<!-- MIDDLE NOTES -->
+
+{% if product.metafields.custom.middle_note_1_title_ != blank %}
+
+<h4 class="top-notes-style">Middle Notes</h4>
+  <div class="slider-container">
+    
+  {% if product.metafields.custom.middle_note_4_title_ != blank %}
+    <button class="arrow left" onclick="slide('Middle-Notes', -1)">&#10094;</button>
+    {% endif %}
+   
+    <ul class="slider-icons" id="sliderList-Middle-Notes">
+
+      {% if product.metafields.custom.middle_note_1_image_ != blank %}
+          <li><img src="{{ product.metafields.custom.middle_note_1_image_.value | img_url: 'medium' }}" alt="" width="" height=""/> 
+            <br>
+          {% if product.metafields.custom.middle_note_1_title_ != blank %}  {{ product.metafields.custom.middle_note_1_title_ }} {% endif %}
+        </li>
+        {% endif %}
+        
+        {% if product.metafields.custom.middle_note_2_image_ != blank %}
+          <li><img src="{{ product.metafields.custom.middle_note_2_image_ | img_url: 'medium' }}" alt="" width="" height=""/>
+           <br>
+         {% if product.metafields.custom.middle_note_2_title_ != blank %}  {{ product.metafields.custom.middle_note_2_title_ }} {% endif %}
+          </li>
+      {% endif %}
+        
+      {% if product.metafields.custom.middle_note_3_image_ != blank %}
+          <li><img src="{{ product.metafields.custom.middle_note_3_image_ | img_url: 'medium' }}" alt="" width="" height=""/>
+            <br>
+         {% if product.metafields.custom.middle_note_3_title_ != blank %}  {{ product.metafields.custom.middle_note_3_title_ }} 
+           {% endif %}
+        </li>
+       {% endif %}
+
+      {% if product.metafields.custom.middle_note_4_title_ != blank %}
+          <li> {% if product.metafields.custom.middle_note_4_image_ != blank %}<img src="{{ product.metafields.custom.middle_note_4_image_ | img_url: 'medium' }}" alt="" width="" height=""/> {% endif %}
+            <br>
+       {% if product.metafields.custom.middle_note_4_title_ != blank %}  {{ product.metafields.custom.middle_note_4_title_ }}
+         {% endif %}
+        </li>
+     
+        {% endif %}
+</ul>
+    
+  {% if product.metafields.custom.middle_note_4_title_ != blank %}
+   <button class="arrow right" onclick="slide('Middle-Notes', 1)">&#10095;</button>
+    {% endif %}
+  
+  </div>
+  {% endif %}
+
+
+
+
+
+
+
+
+  <!-- BASE NOTE -->
+{% if product.metafields.custom.base_note_1_title_ != blank %}
+
+<h4 class="top-notes-style">Base Notes</h4>
+  <div class="slider-container">
+    
+  {% if product.metafields.custom.base_note_4_title_ != blank %}
+    <button class="arrow left" onclick="slide('Base-Notes', -1)">&#10094;</button>
+    {% endif %}
+   
+    <ul class="slider-icons" id="sliderList-Base-Notes">
+
+      {% if product.metafields.custom.base_note_1_image_ != blank %}
+          <li><img src="{{ product.metafields.custom.base_note_1_image_.value | img_url: 'medium' }}" alt="" width="" height=""/> 
+            <br>
+          {% if product.metafields.custom.base_note_1_title_ != blank %}  {{ product.metafields.custom.base_note_1_title_ }} {% endif %}
+        </li>
+        {% endif %}
+        
+        {% if product.metafields.custom.base_note_2_image_ != blank %}
+          <li><img src="{{ product.metafields.custom.base_note_2_image_ | img_url: 'medium' }}" alt="" width="" height=""/>
+           <br>
+         {% if product.metafields.custom.base_note_2_title_ != blank %}  {{ product.metafields.custom.base_note_2_title_ }} {% endif %}
+          </li>
+      {% endif %}
+        
+      {% if product.metafields.custom.base_note_3_image_ != blank %}
+          <li><img src="{{ product.metafields.custom.base_note_3_image_ | img_url: 'medium' }}" alt="" width="" height=""/>
+            <br>
+         {% if product.metafields.custom.base_note_3_title_ != blank %}  {{ product.metafields.custom.base_note_3_title_ }} 
+           {% endif %}
+        </li>
+       {% endif %}
+
+      {% if product.metafields.custom.base_note_4_title_ != blank %}
+          <li> {% if product.metafields.custom.base_note_4_image_ != blank %}<img src="{{ product.metafields.custom.base_note_4_image_ | img_url: 'medium' }}" alt="" width="" height=""/> {% endif %}
+            <br>
+       {% if product.metafields.custom.base_note_4_title_ != blank %}  {{ product.metafields.custom.base_note_4_title_ }}
+         {% endif %}
+        </li>
+     
+        {% endif %}
+</ul>
+    
+  {% if product.metafields.custom.base_note_4_title_ != blank %}
+    <button class="arrow right" onclick="slide('Base-Notes', 1)">&#10095;</button>
+    {% endif %}
+  
+  </div>
+  {% endif %}
+
+ <script>
+  function slide(sliderId, direction) {
+  const slider = document.getElementById('sliderList-' + sliderId); // ✅ FIXED
+  const totalItems = slider.children.length;
+  const maxIndex = totalItems - itemsToShow;
+
+  if (!(sliderId in sliderIndexes)) {
+    sliderIndexes[sliderId] = 0;
+  }
+
+  sliderIndexes[sliderId] += direction;
+
+  if (sliderIndexes[sliderId] < 0) sliderIndexes[sliderId] = 0;
+  if (sliderIndexes[sliderId] > maxIndex) sliderIndexes[sliderId] = maxIndex;
+
+  const itemWidth = slider.children[0].offsetWidth + 10; // margin included
+  slider.style.transform = `translateX(-${sliderIndexes[sliderId] * itemWidth}px)`;
+}
+
+</script>
